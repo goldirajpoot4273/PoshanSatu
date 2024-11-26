@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Consultation - PoshanSetu</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        /* Sliding Sidebar Styling */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #556B2F; /* Olive Green */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 22px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #FFA500; /* Orange on hover */
+            color: #000;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 36px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Open button styling */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #FFA500; /* Orange Button */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            position: fixed;
+            top: 15px;
+            left: 15px; /* Ensuring it's on the left-hand side */
+            z-index: 2; /* Making sure it's above other elements */
+        }
+
+        .openbtn:hover {
+            background-color: #46463c; /* Olive Green on hover */
+        }
+
+        /* Content Styling */
+        .content {
+            transition: margin-left 0.5s;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #556B2F; /* Olive Green */
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #FFA500; /* Orange title */
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        label, input, select, textarea, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        label {
+            color: #FFA500; /* Orange Labels */
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #191b16; /* Olive Green border */
+            background-color: #222;
+            color: #fff;
+        }
+
+        button {
+            background-color: #FFA500; /* Orange Button */
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #556B2F; /* Olive Green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to open the sidebar -->
+    <button class="openbtn" onclick="openNav()">☰ Menu</button>
+
+    <!-- Sliding Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="Home.html">Home</a>
+        <a href="Form.html">Form</a>
+        <a href="FAQ.html">FAQ</a>
+        <a href="DoctorConsultation.html">Doctor Consultation</a>
+        <a href="Leaderboard.html">Leaderboard</a>
+        <a href="Quizzes.html">Quizzes</a>
+        <a href="Videos.html">Videos</a>
+        <a href="TermsAndConditions.html">Terms & Conditions</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1>Expert Nutritional Consultation</h1>
+        </header>
+        <main>
+            <p>Connect with our nutrition experts to address specific concerns about your child's diet and growth.</p>
+            <form id="consultation-form">
+                <label for="child-age">Child's Age:</label>
+                <input type="number" id="child-age" name="child-age" required>
+
+                <label for="child-gender">Child's Gender:</label>
+                <select id="child-gender" name="child-gender" required>
+                    <option value="">Select</option>
+                    <option value="boy">Boy</option>
+                    <option value="girl">Girl</option>
+                </select>
+
+                <label for="concern">Primary Nutritional Concern:</label>
+                <textarea id="concern" name="concern" required></textarea>
+
+                <button type="submit">Request Consultation</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- JavaScript for Sliding Sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.querySelector(".content").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.querySelector(".content").style.marginLeft = "0";
+        }
+    </script>
+
+    <!-- JavaScript for form functionality -->
+    <script src="src/pages/DoctorConsultation.js" type="module"></script>
+
+</body>
+</html>

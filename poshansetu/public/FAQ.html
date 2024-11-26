@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQ page for PoshanSetu providing answers to common nutrition questions.">
+    <meta name="keywords" content="FAQ, nutrition, PoshanSetu, health">
+    <meta name="robots" content="index, follow">
+    <title>FAQ - PoshanSetu</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/faq.css">
+    <style>
+        /* General body styling */
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            font-family: Arial, sans-serif;
+            transition: margin-left 0.3s; /* Smooth transition for the sidebar */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #FFA500; /* Orange highlight */
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #FFA500; /* Orange background */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            transition: background-color 0.3s;
+            position: fixed;
+            top: 15px;
+            left: 15px; /* Adjusted to left side */
+            z-index: 2; /* Ensures the button stays above content */
+        }
+
+        .openbtn:hover {
+            background-color: #FF8C00; /* Darker orange on hover */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #556B2F; /* Olive Green */
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #FFA500; /* Orange text */
+            font-size: 2.5em;
+        }
+
+        /* FAQ Section Styling */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #FFA500; /* Orange for section headings */
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        dl dt {
+            cursor: pointer;
+            background-color: #556B2F; /* Olive Green */
+            padding: 15px;
+            font-size: 1.3em;
+            margin: 0;
+            color: #fff;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        dl dt:hover {
+            background-color: #FFA500; /* Orange on hover */
+            color: #000;
+        }
+
+        dl dd {
+            padding: 15px;
+            background-color: #333;
+            margin: 0;
+            border-radius: 0 0 5px 5px;
+            display: none;
+            color: #fff;
+            transition: max-height 0.4s ease-in-out, padding 0.4s;
+        }
+
+        dl dd.show {
+            display: block;
+            max-height: 200px;
+            padding: 15px;
+        }
+
+        dl dd.hide {
+            display: none;
+            max-height: 0;
+            padding: 0;
+        }
+
+        /* Arrow Styling */
+        .arrow {
+            transition: transform 0.3s ease-in-out;
+            font-size: 1.3em;
+        }
+
+        .arrow.down {
+            transform: rotate(90deg);
+        }
+
+        /* Responsive Sidebar */
+        @media screen and (max-width: 768px) {
+            .sidebar a {
+                font-size: 16px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .openbtn {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <!-- Sidebar button for consistency -->
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>
+        <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <nav>
+            <ul>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="Home.html">Home</a>
+                <a href="Form.html">Form</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="DoctorConsultation.html">Doctor Consultation</a>
+                <a href="Leaderboard.html">Leaderboard</a>
+                <a href="Quizzes.html">Quizzes</a>
+                <a href="Videos.html">Videos</a>
+                <a href="TermsAndConditions.html">Terms & Conditions</a>
+            </ul>
+          </nav>
+        </div>
+      
+        <div id="faq">
+          <header>
+            <h1>Frequently Asked Questions</h1>
+          </header>
+          <main>
+            <section>
+              <h2>Common Nutrition Questions</h2>
+              <dl>
+                <dt onclick="toggleAnswer(this)">How do nutritional needs differ between boys and girls?
+                  <span class="arrow">›</span>
+                </dt>
+                <dd>Boys and girls have different growth trajectories and metabolic rates, which affect their nutritional requirements. Boys may need more calories as they grow older, whereas girls may have slightly higher iron needs during adolescence due to menstruation.</dd>
+                
+                <dt onclick="toggleAnswer(this)">What are the best foods for a child's brain development?
+                  <span class="arrow">›</span>
+                </dt>
+                <dd>Foods rich in omega-3 fatty acids, iron, and antioxidants are crucial for brain development. These include fatty fish, leafy greens, berries, and nuts, which help to support cognitive function and mental performance.</dd>
+                
+                <dt onclick="toggleAnswer(this)">How can I ensure my child gets enough nutrients as a picky eater?
+                  <span class="arrow">›</span>
+                </dt>
+                <dd>Introducing a variety of foods early, involving children in meal preparation, and making meals fun can help. Offering small, consistent portions of healthy food without pressure can gradually expand their palate.</dd>
+              </dl>
+            </section>
+          </main>
+        </div>
+      
+        <!-- Internal CSS -->
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+          }
+      
+          .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100vh;
+            background-color: #000000;
+            padding: 20px;
+            transition: width 0.5s;
+          }
+      
+          .openbtn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+            cursor: pointer;
+          }
+      
+          .closebtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 24px;
+            cursor: pointer;
+          }
+      
+          nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+      
+          nav li {
+            margin-bottom: 10px;
+          }
+      
+          nav a {
+            text-decoration: none;
+            color: #333;
+          }
+      
+          nav a:hover {
+            color: #666;
+          }
+      
+          #faq {
+            padding: 20px;
+          }
+      
+          dl {
+            margin: 0;
+            padding: 0;
+          }
+      
+          dt {
+            margin-bottom: 10px;
+            cursor: pointer;
+          }
+      
+          dd {
+            display: none;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #979090;
+          }
+      
+          .arrow {
+            font-size: 18px;
+            vertical-align: middle;
+          }
+        </style>
+      
+        <!-- Internal JavaScript -->
+        <script>
+          function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+          }
+      
+          function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+          }
+      
+          function toggleAnswer(element) {
+            const dd = element.nextElementSibling;
+            dd.style.display = dd.style.display === "block" ? "none" : "block";
+          }
+        </script>
+      </body>
+
+</body>
+</html>

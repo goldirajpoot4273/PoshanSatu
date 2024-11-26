@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Challenge Leaderboard - PoshanSetu</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/leaderboard.css">
+    <style>
+        /* General body styling */
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            font-family: Arial, sans-serif;
+            transition: margin-left 0.3s;
+            /end code      
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #FFA500;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #FFA500;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            transition: background-color 0.3s;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+        }
+
+        .openbtn:hover {
+            background-color: #FF8C00;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #556B2F;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #FFA500;
+            font-size: 2.5em;
+        }
+
+        /* Leaderboard Section Styling */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #556B2F;
+            color: #FFA500;
+        }
+
+        td {
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #444;
+        }
+
+        /* Responsive Sidebar */
+        @media screen and (max-width: 768px) {
+            .sidebar a {
+                font-size: 16px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .openbtn {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar button for consistency -->
+    <button class="openbtn" onclick="openNav()">☰ Menu</button>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="Home.html">Home</a>
+        <a href="form.html">Form</a>
+        <a href="faq.html">FAQ</a>
+        <a href="doctorConsultation.html">Doctor Consultation</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="quizzes.html">Quizzes</a>
+        <a href="videos.html">Videos</a>
+        <a href="termsAndConditions.html">Terms & Conditions</a>
+    </div>
+
+    <div id="leaderboard">
+        <header>
+            <h1>Nutrition Challenge Leaderboard</h1>
+        </header>
+        <main>
+            <p>See how you stack up against other parents in our nutrition challenges!</p>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Leaderboard data will be populated here by JavaScript -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <!-- JavaScript for Sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+
+    <!-- JavaScript for page-specific behavior -->
+    <script src="src/pages/Leaderboard.js" type="module"></script>
+</body>
+</html>

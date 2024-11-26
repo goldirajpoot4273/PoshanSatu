@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - PoshanSetu</title> 
+    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        /* General body styling */
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            font-family: Arial, sans-serif;
+            transition: margin-left 0.3s;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #FFA500;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #FFA500;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            transition: background-color 0.3s;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+        }
+
+        .openbtn:hover {
+            background-color: #FF8C00;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #556B2F;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #FFA500;
+            font-size: 2.5em;
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #FFA500;
+            font-size: 1.8em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Responsive Sidebar */
+        @media screen and (max-width: 768px) {
+            .sidebar a {
+                font-size: 16px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .openbtn {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar button for consistency -->
+    <button class="openbtn" onclick="openNav()">☰ Menu</button>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="Home.html">Home</a>
+        <a href="Form.html">Form</a>
+        <a href="FAQ.html">FAQ</a>
+        <a href="DoctorConsultation.html">Doctor Consultation</a>
+        <a href="Leaderboard.html">Leaderboard</a>
+        <a href="Quizzes.html">Quizzes</a>
+        <a href="Videos.html">Videos</a>
+        <a href="TermsAndConditions.html">Terms & Conditions</a>
+    </div>
+
+    <div id="terms-and-conditions">
+        <header>
+            <h1>Terms and Conditions</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Use of Service</h2>
+                <p>Poshansetu provides nutritional guidance for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment...</p>
+            </section>
+            <section>
+                <h2>User Responsibilities</h2>
+                <p>Users are responsible for providing accurate information when using our personalized services. Poshansedu is not liable for any consequences resulting from inaccurate information provided by users...</p>
+            </section>
+            <section>
+                <h2>Privacy and Data Usage</h2>
+                <p>We are committed to protecting your privacy. Please refer to our Privacy Policy for details on how we collect, use, and protect your personal information...</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript for Sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+
+    <!-- JavaScript for page-specific behavior -->
+    <script src="src/pages/TermsAndConditions.js" type="module"></script>
+</body>
+</html>

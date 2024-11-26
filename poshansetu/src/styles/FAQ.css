@@ -1,0 +1,43 @@
+/* General styling for the FAQ page */
+.faq {
+    padding: 20px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.faq h2 {
+    color: #FFA500; /* Orange for section heading */
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq-item {
+    background-color: #333; /* Dark background for FAQ items */
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.faq-item h3 {
+    color: #FFA500; /* Orange for FAQ questions */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #fff; /* White text for answers */
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    .faq h2 {
+        font-size: 1.5em;
+    }
+
+    .faq-item h3 {
+        font-size: 1.2em;
+    }
+}

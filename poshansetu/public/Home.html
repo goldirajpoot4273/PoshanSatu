@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoshanSetu - Tailored Nutritional Guidance for Mothers and Children</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #beb6b6; /* Light background for content readability */
+            color: #333; /* Dark text color for contrast */
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #263a2f; /* Sea Green color */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 22px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #FFA07A; /* Light Salmon on hover */
+            color: #000;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+            color: #395e41;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #FFA500; /* Orange Button */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        .openbtn:hover {
+            background-color: #2E8B57; /* Sea Green on hover */
+        }
+
+        /* Main Content */
+        .content {
+            transition: margin-left 0.5s;
+            padding: 20px;
+            background-image: url('path/to/your-background-image.jpg'); /* Add a subtle background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #2d3629; /* Transparent Sea Green background */
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #FFA500; /* Bright Orange for contrast */
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #204430;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p, ul {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        /* Call-to-action (CTA) button */
+        a.button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #FFA500;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #2E8B57; /* Sea Green on hover */
+        }
+
+        /* AI Assistant button */
+        .ai-assistant-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .ai-assistant-button:hover {
+            background-color: #2E8B57; /* Sea Green on hover */
+        }
+
+        /* AI Assistant chat window */
+        .chat-window {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .chat-header {
+            background-color: #FFA500;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .chat-body {
+            padding: 10px;
+            height: 220px;
+            overflow-y: auto;
+            background-color: #F0F0F0;
+        }
+
+        .chat-footer {
+            display: flex;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .chat-footer button {
+            background-color: #FFA500;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .chat-footer button:hover {
+            background-color: #333;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .chat-message.bot {
+            background-color: #FFA07A; /* Light Salmon for bot */
+            text-align: left;
+        }
+
+        .chat-message.user {
+            background-color: #87CEFA; /* Light Blue for user */
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                padding-top: 20px;
+            }
+
+            .openbtn {
+                font-size: 18px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            p, ul {
+                font-size: 1em;
+            }
+
+            a.button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+
+            .chat-window {
+                width: 100%;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to open the sidebar -->
+    <button class="openbtn" onclick="openNav()">☰ Menu</button>
+
+    <!-- Sliding Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="Home.html">Home</a>
+        <a href="Form.html">Form</a>
+        <a href="FAQ.html">FAQ</a>
+        <a href="DoctorConsultation.html">Doctor Consultation</a>
+        <a href="Leaderboard.html">Leaderboard</a>
+        <a href="Quizzes.html">Quizzes</a>
+        <a href="Videos.html">Videos</a>
+        <a href="TermsAndConditions.html">Terms & Conditions</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <img src="assets/logo.jpg" alt="PoshanSetu Logo">
+            <h1>PoshanSetu</h1>
+            <p>Empowering Mothers with Personalized Nutritional Guidance</p>
+        </header>
+        <main>
+            <section id="about">
+                <h2>Our Mission</h2>
+                <p>We provide comprehensive, personalized nutritional advice to support optimal growth and development for children from infancy to adolescence.</p>
+            </section>
+            <section id="features">
+                <h2>What We Offer</h2>
+                <ul>
+                    <li>Tailored nutrition plans for boys and girls</li>
+                    <li>Guidance for working mothers</li>
+                    <li>Advice based on individual factors (activity, health, preferences)</li>
+                    <li>Accurate information to counter misinformation</li>
+                    <li>Practical meal planning and preparation tips</li>
+                    <li>Support for dietary restrictions and allergies</li>
+                    <li>Creating healthy eating environments</li>
+                    <li>Expert advice on breastfeeding and complementary feeding</li>
+                </ul>
+            </section>
+        </section>
+        <section id="cta">
+            <h2>Start Your Journey to Better Nutrition</h2>
+            <a href="Form.html" class="button">Get Personalized Guidance</a>
+        </section>
+        </main>
+    </div>
+
+    <!-- AI Assistant Chatbot Button -->
+    <button class="ai-assistant-button" onclick="toggleChat()">🤖 Chat with PoshanBot</button>
+
+    <!-- AI Assistant Chat Window -->
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">PoshanBot</div>
+        <div class="chat-body" id="chat-body">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        function toggleChat() {
+            const chatWindow = document.getElementById("chat-window");
+            if (chatWindow.style.display === "block") {
+                chatWindow.style.display = "none";
+            } else {
+                chatWindow.style.display = "block";
+            }
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("user-input");
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, "user");
+                setTimeout(() => {
+                    botReply(message);
+                }, 1000);
+                userInput.value = "";
+            }
+        }
+
+        function addMessage(text, sender) {
+            const chatBody = document.getElementById("chat-body");
+            const messageElement = document.createElement("div");
+            messageElement.className = `chat-message ${sender}`;
+            messageElement.textContent = text;
+            chatBody.appendChild(messageElement);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function botReply(message) {
+            let reply = "Sorry, I don't understand that. Can you please ask something else?";
+            if (message.toLowerCase().includes("nutrition")) {
+                reply = "Nutrition is key! A balanced diet should include proteins, carbohydrates, fats, vitamins, and minerals.";
+            } else if (message.toLowerCase().includes("immunity")) {
+                reply = "For boosting immunity, consider foods rich in Vitamin C, like citrus fruits, and include a variety of vegetables and whole grains.";
+            }
+            addMessage(reply, "bot");
+        }
+    </script>
+</body>
+</html>

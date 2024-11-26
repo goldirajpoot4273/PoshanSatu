@@ -1,0 +1,16 @@
+/* Leaderboard styles */
+#leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#leaderboard-table th,
+#leaderboard-table td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#leaderboard-table th {
+    background-color: #f2f2f2;
+}
